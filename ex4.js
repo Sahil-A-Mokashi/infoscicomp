@@ -51,6 +51,3 @@ Output:
 23 : 3 5 : 1 2 3 4 5 6 7 8 9
 */
 
-//keep code DRY (Don't repeat yourself)
-
-//if you're finished, code it into a page
