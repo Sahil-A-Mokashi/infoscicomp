@@ -1,27 +1,38 @@
-    let parse=(i)=>{
-      o=parseInt(i)
-      if (isNaN(o))
-        throw("NaN");
-      return o;
+let parse = (i) => {
+    let o = parseInt(i);
+
+    if (isNaN(o))
+        throw "NaN";
+
+    return o;
+};
+
+
+function ex5(arr) {
+    let validNumbers = [];
+
+    for (let item of arr) {
+        try {
+            validNumbers.push(parse(item));
+        } catch (err) {
+            // ignore corrupted value
+        }
     }
-    
-//Create a modified version of ex4 that prepends "corrupt" where an error occurs
 
-//Examples ()
-// 2 3 5 67
-// corrupt : 2 3 5 67
+    if (validNumbers.length === 0)
+        return "corrupt";
 
-//Actually this one will not result in an error unless you throw one as in parse(i) above:
-// 3 5 hello: 1 2 3 4 5 6 7 8 9
-// corrupt : 3 5 hello: 1 2 3 4 5 6 7 8 9
+    return validNumbers.reduce((a, b) => a + b, 0);
+}
 
-//Create a further version that will output the answer omitting corrupted values
-//or "corrupt" if it cannot be resolved
+console.log(
+    ex5(["3", "5", "hello", "1", "2", "3", "4", "5"])
+);
+// 23
 
-// 3 5 hello: 1 2 3 4 5 6 7 8 9
-// 23 : 3 5 hello: 1 2 3 4 5 6 7 8 9
 
-//this cannot be fixed - actually this is the only one that will throw errors
-// 2 3 5 67
-// corrupt : 2 3 5 67
 
+// console.log(
+//     ex5(["2", "3", "5", "67"])
+// );
+// // 77
