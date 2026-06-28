@@ -39,3 +39,20 @@ label {
     font-weight: bold;
     margin-right: 5px;
 }
+
+/* Header centering and logo sizing */
+#header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#logo {
+    max-width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+#header h1, #header h2, #header h3 {
+    margin: 4px 0;
+}
