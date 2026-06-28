@@ -40,11 +40,14 @@ let factorMultiples = (input) => {
     return `${sum} : ${parts[0].trim()} : ${parts[1].trim()}`;
 };
 
-
+function runEx4() {
+    let input = document.getElementById("ex4Input").value;
+    alert(factorMultiples(input));
+}
 // Example
-let input = "3 5 : 1 2 3 4 5 6 7 8 9";
+// let input = "3 5 : 1 2 3 4 5 6 7 8 9";
 
-alert(factorMultiples(input));
+// alert(factorMultiples(input));
 
 /*
 Output:
