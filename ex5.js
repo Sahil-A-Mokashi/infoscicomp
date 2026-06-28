@@ -25,10 +25,10 @@ function ex5(arr) {
     return validNumbers.reduce((a, b) => a + b, 0);
 }
 
-console.log(
-    ex5(["3", "5", "hello", "1", "2", "3", "4", "5"])
-);
-// 23
+// console.log(
+//     ex5(["3", "5", "hello", "1", "2", "3", "4", "5"])
+// );
+// // 23
 
 
 
@@ -36,3 +36,12 @@ console.log(
 //     ex5(["2", "3", "5", "67"])
 // );
 // // 77
+
+function runEx5() {
+
+    let arr = document.getElementById("ex5Input").value.split(",");
+
+    let result = ex5(arr);
+
+    alert(result);
+}
