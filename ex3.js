@@ -14,8 +14,6 @@ let listEuler1 = (a, b, l) => {
 };
 
 
-// compute the sum of multiples in list a found in list l
-// example: a=[2,3]
 let listEuler2 = (a, l) => {
 
     let sum = 0;
@@ -26,7 +24,7 @@ let listEuler2 = (a, l) => {
 
             if (l[i] % a[j] === 0) {
                 sum += l[i];
-                break; // avoid adding same number multiple times
+                break; 
             }
         }
     }
@@ -35,8 +33,7 @@ let listEuler2 = (a, l) => {
 };
 
 
-// same as above but works for any size list a
-// example: a=[2,3,5]
+
 let listEuler3 = (a, l) => {
 
     let sum = 0;
@@ -62,38 +59,56 @@ let listEuler3 = (a, l) => {
 };
 
 
-let eulerlist = () =>
-{
-    let a = 2;
-    let b = 3;
+// Exercise 3 - Part 1
+let eulerlist = () => {
 
-    let l = [1,2,3,4,5,6,7,9,10,10,10];
+    let a = parseInt(document.getElementById("a1").value);
+    let b = parseInt(document.getElementById("b1").value);
+
+    let l = document.getElementById("l").value
+        .split(",")
+        .map(Number);
 
     let result = listEuler1(a, b, l);
 
-    alert(result);
-}
+    alert("Sum = " + result);
+};
 
 
-let euler2Lists = () =>
-{
-    let a = [2,3];
+// Exercise 3 - Part 2
+let euler2Lists = () => {
 
-    let l = [1,2,3,4,5,6,7,9,10,10,10];
+    let a = document.getElementById("aList").value
+        .split(",")
+        .map(Number);
+
+    if (a.length !== 2) {
+        alert("Please enter exactly 2 numbers in List A.");
+        return;
+    }
+
+    let l = document.getElementById("mList").value
+        .split(",")
+        .map(Number);
 
     let result = listEuler2(a, l);
 
-    alert(result);
-}
+    alert("Sum = " + result);
+};
 
 
-let euler2Lists1 = () =>
-{
-    let a = [2,3,5];
+// Exercise 3 - Part 3
+let euler2Lists1 = () => {
 
-    let l = [1,2,3,4,5,6,7,9,10,10,10];
+    let a = document.getElementById("aList").value
+        .split(",")
+        .map(Number);
+
+    let l = document.getElementById("mList").value
+        .split(",")
+        .map(Number);
 
     let result = listEuler3(a, l);
 
-    alert(result);
-}
+    alert("Sum = " + result);
+};
